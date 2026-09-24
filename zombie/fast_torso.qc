@@ -1,0 +1,462 @@
+﻿$cdmaterials "models\zombie_04\"
+$cdmaterials "models\zombie_04\facemap\"
+$cdmaterials "models\zombie_04\flesh\"
+$cdmaterials "models\zombie_04\mouth\"
+$cdmaterials "models\zombie_04\sheet\"
+$cdmaterials "models\zombie_04\skull\"
+$cdmaterials "models\zombie_04\bodygroups\"
+
+// Created by Crowbar 0.74
+
+$modelname "Zombie/Fast_torso.mdl"
+
+$model "studio" "..\zombie_04_reference.smd"
+
+$surfaceprop "zombieflesh"
+
+$contents "solid"
+
+$illumposition -2.418 -2.757 11.058
+
+$eyeposition 0 0 24
+
+$opaque
+
+
+$texturegroup "skinfamilies"
+{
+	
+
+flexfile "male_04_reference.vta"
+{
+	defaultflex frame 0
+	flexpair "AU12" 1 frame 1
+	flexpair "AU12" 1 frame 2
+	flex "AU12AU25" frame 3
+	flexpair "AU15" 1 frame 4
+	flexpair "AU17" 1 frame 5
+	flexpair "AU10" 1 frame 6
+	flex "AU16" frame 7
+	flexpair "AU25" 1 frame 8
+	flexpair "AU18" 1 frame 9
+	flexpair "AU18" 1 frame 10
+	flexpair "AU22" 1 frame 11
+	flexpair "AU20" 1 frame 12
+	flex "AU32" frame 13
+	flex "AU24" frame 14
+	flex "AU31" frame 15
+	flexpair "AU26" 1 frame 16
+	flexpair "AU27" 1 frame 17
+	flexpair "AU26Z" 1 frame 18
+
+	// Already in eyelid lines: flex "upper_left" frame 19
+	// Already in eyelid lines: flex "upper_left" frame 20
+	// Already in eyelid lines: flex "lower_left" frame 21
+	// Already in eyelid lines: flex "lower_left" frame 22
+
+	flex "AU42" frame 23
+	flexpair "AU1" 1 frame 24
+	flexpair "AU2" 1 frame 25
+	flexpair "AU4" 1 frame 26
+	flexpair "AU1AU2" 1 frame 27
+	flexpair "AU6" 1 frame 28
+	flexpair "AU9" 1 frame 29
+
+	// Already in eyelid lines: flex "upper_right" frame 30
+	// Already in eyelid lines: flex "upper_right" frame 31
+	// Already in eyelid lines: flex "lower_right" frame 32
+	// Already in eyelid lines: flex "lower_right" frame 33
+
+	flex "AU38" frame 34
+	flex "the_rock" frame 35
+}
+
+flexcontroller eyelid range 0 1 "right_lid_raiser"
+flexcontroller eyelid range 0 1 "left_lid_raiser"
+flexcontroller eyelid range 0 1 "right_lid_tightener"
+flexcontroller eyelid range 0 1 "left_lid_tightener"
+flexcontroller eyelid range 0 1 "right_lid_droop"
+flexcontroller eyelid range 0 1 "left_lid_droop"
+flexcontroller eyelid range 0 1 "right_lid_closer"
+flexcontroller eyelid range 0 1 "left_lid_closer"
+flexcontroller eyelid range 0 1 "half_closed"
+flexcontroller eyelid range 0 1 "blink"
+
+flexcontroller brow range 0 1 "right_inner_raiser"
+flexcontroller brow range 0 1 "left_inner_raiser"
+flexcontroller brow range 0 1 "right_outer_raiser"
+flexcontroller brow range 0 1 "left_outer_raiser"
+flexcontroller brow range 0 1 "right_lowerer"
+flexcontroller brow range 0 1 "left_lowerer"
+
+flexcontroller nose range 0 1 "right_cheek_raiser"
+flexcontroller nose range 0 1 "left_cheek_raiser"
+flexcontroller nose range 0 1 "wrinkler"
+flexcontroller nose range 0 1 "dilator"
+
+flexcontroller mouth range 0 1 "right_upper_raiser"
+flexcontroller mouth range 0 1 "left_upper_raiser"
+flexcontroller mouth range 0 1 "right_corner_puller"
+flexcontroller mouth range 0 1 "left_corner_puller"
+flexcontroller mouth range 0 1 "right_corner_depressor"
+flexcontroller mouth range 0 1 "left_corner_depressor"
+flexcontroller mouth range 0 1 "chin_raiser"
+
+flexcontroller phoneme range 0 1 "right_part"
+flexcontroller phoneme range 0 1 "left_part"
+flexcontroller phoneme range 0 1 "right_puckerer"
+flexcontroller phoneme range 0 1 "left_puckerer"
+flexcontroller phoneme range 0 1 "right_funneler"
+flexcontroller phoneme range 0 1 "left_funneler"
+flexcontroller phoneme range 0 1 "right_stretcher"
+flexcontroller phoneme range 0 1 "left_stretcher"
+flexcontroller phoneme range 0 1 "bite"
+flexcontroller phoneme range 0 1 "presser"
+flexcontroller phoneme range 0 1 "tightener"
+flexcontroller phoneme range 0 1 "jaw_clencher"
+flexcontroller phoneme range 0 1 "jaw_drop"
+flexcontroller phoneme range 0 1 "right_mouth_drop"
+flexcontroller phoneme range 0 1 "left_mouth_drop"
+
+flexcontroller mouth range 0 1 "smile"
+flexcontroller mouth range 0 1 "lower_lip"
+
+flexcontroller head range -30 30 "head_rightleft"
+flexcontroller head range -15 15 "head_updown"
+flexcontroller head range -15 15 "head_tilt"
+flexcontroller eyes range -30 30 "eyes_updown"
+flexcontroller eyes range -30 30 "eyes_rightleft"
+flexcontroller body range -30 30 "body_rightleft"
+flexcontroller chest range -30 30 "chest_rightleft"
+flexcontroller head range -0.2 0.2 "head_forwardback"
+flexcontroller gesture range -1 1 "gesture_updown"
+flexcontroller gesture range -1 1 "gesture_rightleft"
+
+flexcontroller custom range 0 1 "the_rock"
+
+localvar right_open
+localvar left_open
+localvar right_lip_suppressor
+localvar left_lip_suppressor
+localvar right_depressor_suppressor
+localvar left_depressor_suppressor
+localvar right_corner_suppressor
+localvar left_corner_suppressor
+localvar right_drop_suppressor
+localvar left_drop_suppressor
+localvar right_drop
+localvar left_drop
+
+%the_rock = the_rock
+
+%upper_right_raiser = right_lid_raiser * (1 - right_lid_droop * 0.8) * (1 - right_lid_closer) * (1 - blink)
+%upper_right_neutral = (1 - right_lid_droop * 0.8) * (1 - right_lid_raiser) * (1 - right_lid_closer) * (1 - blink)
+%upper_right_lowerer = right_lid_closer + blink * (1 - right_lid_closer)
+
+%upper_left_raiser = left_lid_raiser * (1 - left_lid_droop * 0.8) * (1 - left_lid_closer) * (1 - blink)
+%upper_left_neutral = (1 - left_lid_droop * 0.8) * (1 - left_lid_raiser) * (1 - left_lid_closer) * (1 - blink)
+%upper_left_lowerer = left_lid_closer + blink * (1 - left_lid_closer)
+
+%lower_right_raiser = right_lid_closer + blink * 0.5 * (1 - right_lid_closer)
+%lower_right_neutral = (1 - right_lid_closer) * (1 - 0.5 * blink) * (1 - right_lid_tightener * 0.5) * (1 - right_cheek_raiser * 0.25)
+%lower_right_lowerer = 0
+
+%lower_left_raiser = left_lid_closer + blink * 0.5 * (1 - left_lid_closer)
+%lower_left_neutral = (1 - left_lid_closer) * (1 - 0.5 * blink) * (1 - left_lid_tightener * 0.5) * (1 - left_cheek_raiser * 0.25)
+%lower_left_lowerer = 0
+
+%AU1R = right_inner_raiser * (1 - right_outer_raiser) * (1 - right_lowerer)
+%AU1L = left_inner_raiser * (1 - left_outer_raiser) * (1 - left_lowerer)
+%AU2R = right_outer_raiser * (1 - right_inner_raiser) * (1 - right_lowerer)
+%AU2L = left_outer_raiser * (1 - left_inner_raiser) * (1 - left_lowerer)
+%AU1AU2R = right_inner_raiser * right_outer_raiser * (1 - right_lowerer)
+%AU1AU2L = left_inner_raiser * left_outer_raiser * (1 - left_lowerer)
+
+%AU4R = right_lowerer
+%AU4L = left_lowerer
+%AU6R = right_cheek_raiser
+%AU6L = left_cheek_raiser
+%AU9R = wrinkler
+%AU9L = wrinkler
+%AU38 = dilator
+
+%right_open = smile + right_part * (1 - smile) + right_puckerer + right_funneler + right_upper_raiser * 0.5 + lower_lip * 0.5
+%left_open = smile + left_part * (1 - smile) + left_puckerer + left_funneler + left_upper_raiser * 0.5 + lower_lip * 0.5
+
+%right_lip_suppressor = 1 / %right_open * (1 - presser) * (1 - bite)
+%left_lip_suppressor = 1 / %left_open * (1 - presser) * (1 - bite)
+
+%AU10R = right_upper_raiser * right_upper_raiser * 0.5 * %right_lip_suppressor
+%AU10L = left_upper_raiser * left_upper_raiser * 0.5 * %left_lip_suppressor
+
+%AU25R = right_part * right_part * %right_lip_suppressor * (1 - smile)
+%AU25L = left_part * left_part * %left_lip_suppressor * (1 - smile)
+
+%AU12AU25 = smile * smile * 0.5 * (%right_lip_suppressor + %left_lip_suppressor)
+
+%AU18R = right_puckerer * right_puckerer * %right_lip_suppressor
+%AU18L = left_puckerer * left_puckerer * %left_lip_suppressor
+
+%AU22R = right_funneler * right_funneler * %right_lip_suppressor
+%AU22L = left_funneler * left_funneler * %left_lip_suppressor
+
+%AU17R = chin_raiser * (1 - jaw_drop * 0.5) * (1 - bite) * (1 - 0.6 * (%AU25R + %AU18R + %AU22R)) * (1 - smile)
+%AU17L = chin_raiser * (1 - jaw_drop * 0.5) * (1 - bite) * (1 - 0.6 * (%AU25L + %AU18L + %AU22L)) * (1 - smile)
+
+%right_depressor_suppressor = 1 / (%AU18R * 0.8 + %AU22R * 0.8 + %AU17R + bite + right_corner_puller + right_stretcher + right_corner_depressor) * (1 - jaw_drop * 0.5) * (1 - smile * 0.5)
+%left_depressor_suppressor = 1 / (%AU18L * 0.8 + %AU22L * 0.8 + %AU17L + bite + left_corner_puller + left_stretcher + left_corner_depressor) * (1 - jaw_drop * 0.5) * (1 - smile * 0.5)
+
+%AU15R = right_corner_depressor * right_corner_depressor * %right_depressor_suppressor
+%AU15L = left_corner_depressor * left_corner_depressor * %left_depressor_suppressor
+
+%right_corner_suppressor = 1 / (%AU18R * 0.8 + %AU22R * 0.8 + %AU17R + bite + right_corner_puller + right_stretcher + right_corner_depressor) * (1 - jaw_drop * 0.5) * (1 - smile)
+%left_corner_suppressor = 1 / (%AU18L * 0.8 + %AU22L * 0.8 + %AU17L + bite + left_corner_puller + left_stretcher + left_corner_depressor) * (1 - jaw_drop * 0.5) * (1 - smile)
+
+%AU12R = right_corner_puller * right_corner_puller * %right_corner_suppressor
+%AU12L = left_corner_puller * left_corner_puller * %left_corner_suppressor
+
+%AU20R = right_stretcher * right_stretcher * %right_corner_suppressor
+%AU20L = left_stretcher * left_stretcher * %left_corner_suppressor
+
+%AU32 = bite
+%AU24 = presser + (1 - presser) * tightener
+%AU31 = jaw_clencher * jaw_clencher / (jaw_clencher + jaw_drop)
+
+%right_drop_suppressor = 1 / (0.5 * %right_open + right_mouth_drop) * (1 - presser) * (1 - bite)
+%left_drop_suppressor = 1 / (0.5 * %left_open + left_mouth_drop) * (1 - presser) * (1 - bite)
+
+%right_drop = right_mouth_drop * right_mouth_drop * %right_drop_suppressor
+%left_drop = left_mouth_drop * left_mouth_drop * %left_drop_suppressor
+
+%AU26R = jaw_drop * (1 - %right_drop) * jaw_drop / (jaw_clencher + jaw_drop)
+%AU26L = jaw_drop * (1 - %left_drop) * jaw_drop / (jaw_clencher + jaw_drop)
+
+%AU27R = jaw_drop * %right_drop * jaw_drop / (jaw_clencher + jaw_drop)
+%AU27L = jaw_drop * %left_drop * jaw_drop / (jaw_clencher + jaw_drop)
+
+%AU16 = lower_lip * lower_lip * 0.25 * (%right_lip_suppressor + %left_lip_suppressor) * (1 - 0.5 * (%AU27R + %AU27L))
+
+%mouth = %AU27R * 0.5 + %AU27L * 0.5 + %AU22R * 0.35 + %AU22L * 0.35 + %AU18R * 0.25 + %AU18L * 0.25 + %AU25R * 0.35 + %AU25L * 0.35 + %AU32 * 0.5 + %AU12AU25 + %AU16 * 0.4
+
+}
+
+	{
+		"fast_zombie_sheet"
+		"allinonebacup2"
+	}
+}
+
+$attachment "headcrab" "ValveBiped.HC_BodyCube" 0 0 0 rotate 0 0 0
+$attachment "eyes" "ValveBiped.HC_BodyCube" 0 0 0 rotate 0 -90 0
+$attachment "head" "ValveBiped.HC_BodyCube" 0 0 0 rotate 0 -90 0
+$attachment "chest" "ValveBiped.Bip01_Spine4" -3 6 0 rotate 0 60 90
+$attachment "Blood_Left" "ValveBiped.Bip01_L_Finger2" 0 0 0 rotate 0 0 0
+$attachment "Blood_Right" "ValveBiped.Bip01_R_Finger2" 0 0 0 rotate 0 0 0
+
+$cbox 0 0 0 0 0 0
+
+$bbox -12 -12 0 12 12 24
+
+$hboxset "default"
+$hbox 2 "ValveBiped.Bip01_Spine1" -8 -8.91 -7.12 12.5 4.77 7.73
+$hbox 4 "ValveBiped.Bip01_L_UpperArm" 0 -2 -3.05 15.16 5.38 2.23
+$hbox 4 "ValveBiped.Bip01_L_Forearm" -1.05 -1.86 -1.9 18.530001 3.11 2.36
+$hbox 4 "ValveBiped.Bip01_L_Hand" 0 -1.78 -2 14 1.23 3
+$hbox 5 "ValveBiped.Bip01_R_UpperArm" 0 -1.95 -2.25 14.86 4.75 3.7
+$hbox 5 "ValveBiped.Bip01_R_Forearm" -0.02 -1.89 -1.6 18.530001 3.09 2.66
+$hbox 5 "ValveBiped.Bip01_R_Hand" 0 -1.78 -2 14 1.23 3
+$hbox 1 "ValveBiped.HC_BodyCube" -6.59 -4.89 -4.55 8.5 6.48 5.03
+
+$definebone "ValveBiped.Bip01" "" 0 1.516078 38.353989 0 0 89.999982 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Pelvis" "ValveBiped.Bip01" 0 0 0 0 0 0 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Spine" "ValveBiped.Bip01" 0 3.345132 -2.981898 3.030546 89.999982 89.999982 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Spine1" "ValveBiped.Bip01_Spine" 4.126621 0 0 0 -6.300129 0 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Spine2" "ValveBiped.Bip01_Spine1" 3.612873 0 0 0 9.000307 0 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Spine4" "ValveBiped.Bip01_Spine2" 9.183975 0 0 0 9.938355 0 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Neck1" "ValveBiped.Bip01_Spine4" 3.138083 0 0 0 -53.661333 179.999964 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_Head1" "ValveBiped.Bip01_Neck1" 1.707666 0.000001 0 0 -23.096614 0 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Clavicle" "ValveBiped.Bip01_Spine4" 1.663039 1.21051 2.595493 -73.711859 169.261336 90.864274 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_UpperArm" "ValveBiped.Bip01_L_Clavicle" 6.028141 0.000002 0 -3.233429 -33.942997 -89.993623 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Forearm" "ValveBiped.Bip01_L_UpperArm" 12.693002 0 0.000001 0.000001 -43.708484 -0.000001 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Hand" "ValveBiped.Bip01_L_Forearm" 11.575974 0.000001 -0.000031 -0.152233 2.188072 66.004332 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger3" "ValveBiped.Bip01_L_Hand" 5.562233 -0.288268 -0.510574 11.370637 -0.288829 -175.42106 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger31" "ValveBiped.Bip01_L_Finger3" 5.1585 -0.000001 -0.000001 -0.325442 0.504031 -4.026878 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger32" "ValveBiped.Bip01_L_Finger31" 3.326002 -0.000001 0 -0.423419 0.564364 0.509073 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger1" "ValveBiped.Bip01_L_Hand" 5.591166 -0.27902 1.848881 -6.139756 0.26803 -175.484608 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger11" "ValveBiped.Bip01_L_Finger1" 5.292999 0.000001 -0.000002 -0.3581 0.4814 -4.215556 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger12" "ValveBiped.Bip01_L_Finger11" 3.079116 -0.000001 0.000002 -0.392477 0.453783 0.399808 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger2" "ValveBiped.Bip01_L_Hand" 5.739738 -0.095433 0.607274 1.464941 -1.052525 -175.509634 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger21" "ValveBiped.Bip01_L_Finger2" 5.652501 -0.000001 0 -0.347904 0.488849 -3.881531 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_L_Finger22" "ValveBiped.Bip01_L_Finger21" 3.325017 0 -0.000002 -0.380218 0.464097 0.535027 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Clavicle" "ValveBiped.Bip01_Spine4" 1.66305 1.210515 -2.595442 73.455003 168.779602 -95.441805 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_UpperArm" "ValveBiped.Bip01_R_Clavicle" 6.028141 -0.000001 0 3.847067 -33.25505 93.511751 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Forearm" "ValveBiped.Bip01_R_UpperArm" 12.693002 0 0.000003 -0.000004 -46.506642 0.000006 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Hand" "ValveBiped.Bip01_R_Forearm" 11.599607 0.000002 0.000001 -6.102462 1.63843 -66.743331 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger3" "ValveBiped.Bip01_R_Hand" 5.928185 0.378912 0.637283 -10.707781 6.136659 168.772622 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger31" "ValveBiped.Bip01_R_Finger3" 5.074002 0.000001 -0.000001 0.000001 0.000005 -0.000003 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger32" "ValveBiped.Bip01_R_Finger31" 3.325999 0.000001 0.000002 -0.000057 0.000006 -0.000003 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger2" "ValveBiped.Bip01_R_Hand" 6.189647 0.5688 -0.554352 -0.783921 4.738873 168.977514 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger21" "ValveBiped.Bip01_R_Finger2" 5.511002 0.000002 0.000001 -0.000001 0.7107 -0.000002 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger22" "ValveBiped.Bip01_R_Finger21" 3.325017 -0.000001 -0.000001 -0.000003 -0.566309 -0.000002 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger1" "ValveBiped.Bip01_R_Hand" 5.90046 0.2992 -1.780354 7.365085 5.871209 168.939183 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger11" "ValveBiped.Bip01_R_Finger1" 5.248501 0.000003 -0.000001 0 0.678272 -0.000002 0 0 0 0 0 0
+$definebone "ValveBiped.Bip01_R_Finger12" "ValveBiped.Bip01_R_Finger11" 3.151001 0.000001 -0.000001 0 -0.573814 -0.000003 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BodyCube" "ValveBiped.Bip01_Spine4" 7.600445 -0.908441 0.636362 -89.999982 170.392033 0 0 0 0 0 0 0
+$definebone "ValveBiped.HC_HeadCube" "ValveBiped.HC_BodyCube" 0.051795 -3.221541 -2.149795 -0.227178 -179.024162 89.999982 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneLF" "ValveBiped.HC_HeadCube" -3.929418 0.000003 0 34.419294 -144.015809 26.145384 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneLF1" "ValveBiped.HC_BoneLF" 13.106231 0.000003 0 0 116.133679 -0.000001 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneRF" "ValveBiped.HC_HeadCube" 3.929418 -0.000002 0 30.834414 -33.423039 -23.567301 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneRF1" "ValveBiped.HC_BoneRF" 13.106231 0.000002 0 -0.000001 -118.266296 -0.000002 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneLB" "ValveBiped.HC_BodyCube" 3.007646 4.34452 0.542817 -15.513807 40.457246 75.722387 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneLB1" "ValveBiped.HC_BoneLB" 10.074753 -0.000005 -0.000001 -0.000001 -93.416422 -0.000001 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneLB2" "ValveBiped.HC_BoneLB1" 10.292003 -0.000002 0 -0.000001 -24.396715 -0.000001 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneRB" "ValveBiped.HC_BodyCube" -2.753414 4.323161 0.558394 -12.847948 130.549176 110.68284 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneRB1" "ValveBiped.HC_BoneRB" 10.074757 0.000002 0 0 -91.912742 0.000002 0 0 0 0 0 0
+$definebone "ValveBiped.HC_BoneRB2" "ValveBiped.HC_BoneRB1" 10.292 -0.000001 -0.000001 0 -23.266271 0.000002 0 0 0 0 0 0
+
+$bonesaveframe "ValveBiped.Bip01" position rotation
+$bonesaveframe "ValveBiped.Bip01_Pelvis" rotation
+$bonesaveframe "ValveBiped.Bip01_Spine" rotation
+$bonesaveframe "ValveBiped.Bip01_Spine1" rotation
+$bonesaveframe "ValveBiped.Bip01_Spine2" rotation
+$bonesaveframe "ValveBiped.Bip01_Spine4" rotation
+$bonesaveframe "ValveBiped.Bip01_Neck1" rotation
+$bonesaveframe "ValveBiped.Bip01_Head1" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Clavicle" rotation
+$bonesaveframe "ValveBiped.Bip01_L_UpperArm" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Forearm" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Hand" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger3" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger31" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger32" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger1" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger11" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger12" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger2" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger21" rotation
+$bonesaveframe "ValveBiped.Bip01_L_Finger22" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Clavicle" rotation
+$bonesaveframe "ValveBiped.Bip01_R_UpperArm" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Forearm" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Hand" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger3" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger31" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger32" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger2" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger21" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger22" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger1" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger11" rotation
+$bonesaveframe "ValveBiped.Bip01_R_Finger12" rotation
+$bonesaveframe "ValveBiped.HC_BodyCube" rotation
+$bonesaveframe "ValveBiped.HC_HeadCube" rotation
+$bonesaveframe "ValveBiped.HC_BoneLF" rotation
+$bonesaveframe "ValveBiped.HC_BoneLF1" rotation
+$bonesaveframe "ValveBiped.HC_BoneRF" rotation
+$bonesaveframe "ValveBiped.HC_BoneRF1" rotation
+$bonesaveframe "ValveBiped.HC_BoneLB" rotation
+$bonesaveframe "ValveBiped.HC_BoneLB1" rotation
+$bonesaveframe "ValveBiped.HC_BoneLB2" rotation
+$bonesaveframe "ValveBiped.HC_BoneRB" rotation
+$bonesaveframe "ValveBiped.HC_BoneRB1" rotation
+$bonesaveframe "ValveBiped.HC_BoneRB2" rotation
+
+$sequence "Idle01" {
+	"fast_torso_anims\Idle01.smd"
+	activity "ACT_IDLE" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+	loop
+}
+
+$sequence "crawl" {
+	"fast_torso_anims\crawl.smd"
+	activity "ACT_WALK" 1
+	{ event AE_ZOMBIE_STEP_RIGHT 6 "" }
+	{ event AE_ZOMBIE_STEP_LEFT 14 "" }
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+	loop
+	walkframe 24 LX LY
+}
+
+$sequence "attack01" {
+	"fast_torso_anims\attack01.smd"
+	activity "ACT_MELEE_ATTACK1" 1
+	{ event AE_ZOMBIE_ATTACK_SCREAM 5 "" }
+	{ event AE_ZOMBIE_ATTACK_LEFT 11 "" }
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$sequence "releasecrab" {
+	"fast_torso_anims\releasecrab.smd"
+	activity "ACT_ZOM_RELEASECRAB" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$sequence "ragdoll" {
+	"fast_torso_anims\ragdoll.smd"
+	activity "ACT_DIERAGDOLL" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$sequence "alyx_torso_fight1" {
+	"fast_torso_anims\alyx_torso_fight1.smd"
+	fadein 0.2
+	fadeout 0.2
+	fps 30
+}
+
+$collisionjoints "..\male_04_physics.smd"
+{
+	$mass 40
+	$inertia 5
+	$damping 0.01
+	$rotdamping 1.5
+	$rootbone "ValveBiped.Bip01_Pelvis"
+
+
+	$jointconstrain "ValveBiped.Bip01_Spine2" x limit -30 30 1
+	$jointconstrain "ValveBiped.Bip01_Spine2" y limit -41 41 1
+	$jointconstrain "ValveBiped.Bip01_Spine2" z limit -53 53 1
+
+	$jointmassbias "ValveBiped.Bip01_R_UpperArm" 2
+	$jointconstrain "ValveBiped.Bip01_R_UpperArm" x limit -28 28 1
+	$jointconstrain "ValveBiped.Bip01_R_UpperArm" y limit -30 59 1
+	$jointconstrain "ValveBiped.Bip01_R_UpperArm" z limit -73 40 1
+
+	$jointmassbias "ValveBiped.Bip01_R_Forearm" 3
+	$jointconstrain "ValveBiped.Bip01_R_Forearm" x limit 0 0 0
+	$jointconstrain "ValveBiped.Bip01_R_Forearm" y limit 0 0 0
+	$jointconstrain "ValveBiped.Bip01_R_Forearm" z limit -100 35 1
+
+	$jointmassbias "ValveBiped.Bip01_L_UpperArm" 2
+	$jointconstrain "ValveBiped.Bip01_L_UpperArm" x limit -17 17 1
+	$jointconstrain "ValveBiped.Bip01_L_UpperArm" y limit -45 30 1
+	$jointconstrain "ValveBiped.Bip01_L_UpperArm" z limit -73 40 1
+
+	$jointmassbias "ValveBiped.Bip01_L_Forearm" 3
+	$jointconstrain "ValveBiped.Bip01_L_Forearm" x limit 0 0 0
+	$jointconstrain "ValveBiped.Bip01_L_Forearm" y limit 0 0 0
+	$jointconstrain "ValveBiped.Bip01_L_Forearm" z limit -120 4 1
+
+	$jointconstrain "ValveBiped.Bip01_L_Hand" x limit -32 32 1
+	$jointconstrain "ValveBiped.Bip01_L_Hand" y limit -19 19 1
+	$jointconstrain "ValveBiped.Bip01_L_Hand" z limit -44 44 1
+
+	$jointconstrain "ValveBiped.Bip01_R_Hand" x limit -23 23 1
+	$jointconstrain "ValveBiped.Bip01_R_Hand" y limit 0 0 0
+	$jointconstrain "ValveBiped.Bip01_R_Hand" z limit -50 50 1
+
+	$jointconstrain "ValveBiped.HC_BodyCube" x limit 0 0 0
+	$jointconstrain "ValveBiped.HC_BodyCube" y limit 0 0 0
+	$jointconstrain "ValveBiped.HC_BodyCube" z limit 0 0 0
+}
