@@ -10,8 +10,7 @@ $cdmaterials "models\zombie_04\bodygroups\"
 
 $modelname "Combine_Super_Soldier.mdl"
 
-$model "studio" "zombie_04_reference.smd"
-{
+$model "studio" "zombie_04_reference.smd" {
 flexfile "male_04_reference.vta"
 {
 	defaultflex frame 0

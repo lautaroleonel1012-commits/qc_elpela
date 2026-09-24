@@ -25,7 +25,7 @@ $model "studio" "..\..\zombie_04_reference.smd" {
 
 	
 
-flexfile "male_04_reference.vta"
+flexfile "..\..\male_04_reference.vta"
 {
 	defaultflex frame 0
 	flexpair "AU12" 1 frame 1

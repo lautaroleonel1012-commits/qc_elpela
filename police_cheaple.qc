@@ -10,8 +10,7 @@ $cdmaterials "models\zombie_04\bodygroups\"
 
 $modelname "Police_Cheaple.mdl"
 
-$model "studio" "zombie_04_reference.smd"
-{
+$model "studio" "zombie_04_reference.smd" {
 flexfile "male_04_reference.vta"
 {
 	defaultflex frame 0

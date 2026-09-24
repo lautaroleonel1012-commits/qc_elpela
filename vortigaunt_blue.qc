@@ -145,21 +145,9 @@ localvar left_drop
 
 %the_rock = the_rock
 
-%upper_right_raiser = right_lid_raiser * (1 - right_lid_droop * 0.8) * (1 - right_lid_closer) * (1 - blink)
-%upper_right_neutral = (1 - right_lid_droop * 0.8) * (1 - right_lid_raiser) * (1 - right_lid_closer) * (1 - blink)
-%upper_right_lowerer = right_lid_closer + blink * (1 - right_lid_closer)
 
-%upper_left_raiser = left_lid_raiser * (1 - left_lid_droop * 0.8) * (1 - left_lid_closer) * (1 - blink)
-%upper_left_neutral = (1 - left_lid_droop * 0.8) * (1 - left_lid_raiser) * (1 - left_lid_closer) * (1 - blink)
-%upper_left_lowerer = left_lid_closer + blink * (1 - left_lid_closer)
 
-%lower_right_raiser = right_lid_closer + blink * 0.5 * (1 - right_lid_closer)
-%lower_right_neutral = (1 - right_lid_closer) * (1 - 0.5 * blink) * (1 - right_lid_tightener * 0.5) * (1 - right_cheek_raiser * 0.25)
-%lower_right_lowerer = 0
 
-%lower_left_raiser = left_lid_closer + blink * 0.5 * (1 - left_lid_closer)
-%lower_left_neutral = (1 - left_lid_closer) * (1 - 0.5 * blink) * (1 - left_lid_tightener * 0.5) * (1 - left_cheek_raiser * 0.25)
-%lower_left_lowerer = 0
 
 %AU1R = right_inner_raiser * (1 - right_outer_raiser) * (1 - right_lowerer)
 %AU1L = left_inner_raiser * (1 - left_outer_raiser) * (1 - left_lowerer)
